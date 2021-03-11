@@ -6,3 +6,4 @@ pandas
 marshmallow
 flask-marshmallow
 marshmallow_sqlalchemy
+python-dotenv

@@ -6,7 +6,7 @@ class Labeler(db.Model):
     __tablename__ = "labeler"
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    text = db.Column(db.String(255), nullable=False)
+    message = db.Column(db.String(255), nullable=False)
     label = db.Column(db.Boolean, nullable=False)
 
     def create(self):
@@ -20,5 +20,5 @@ class LabelerSchema(ModelSchema):
         model = Labeler
 
     id = fields.Integer(dump_only=True)
-    text = fields.String(required=True)
+    message = fields.String(required=True)
     label = fields.Boolean(required=True)
