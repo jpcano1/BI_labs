@@ -1,0 +1,8 @@
+flask
+scikit-learn==0.22.2.post1
+sqlalchemy
+flask-sqlalchemy
+pandas
+marshmallow
+flask-marshmallow
+marshmallow_sqlalchemy
