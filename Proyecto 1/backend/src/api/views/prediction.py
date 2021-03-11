@@ -1,9 +1,8 @@
 from flask_restful import Resource
 from flask import request
 from sklearn.svm import SVC
-from ..controllers.base import BaseController
-from ..utils.responses import response_with
-from ..utils import responses as resp
+from ..controllers import BaseController
+from ..utils import responses as resp, response_with
 
 class Prediction(Resource):
     def __init__(self, model: SVC, vectorizer, transformer):

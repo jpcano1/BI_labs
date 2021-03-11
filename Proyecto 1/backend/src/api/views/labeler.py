@@ -1,8 +1,7 @@
-from ..utils.database import db
-from ..models.labeler import (Labeler as LabelerModel,
-                              LabelerSchema)
-from ..utils.responses import response_with
-from ..utils import responses as resp
+from ..utils import db
+from ..models import (Labeler as LabelerModel,
+                      LabelerSchema)
+from ..utils import responses as resp, response_with
 from flask import request
 from flask_restful import Resource
 

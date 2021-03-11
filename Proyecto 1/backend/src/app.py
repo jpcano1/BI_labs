@@ -2,12 +2,11 @@ from flask import Flask
 import joblib
 from sklearn.svm import SVC
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
-from .api.utils.database import db
+from .api.utils import db
 import os
-from .api.config.config import DevelopmentConfig, ProductionConfig, TestingConfig
+from .api.config import DevelopmentConfig, ProductionConfig, TestingConfig
 from flask_restful import Api
-from .api.views.prediction import Prediction
-from .api.views.labeler import Labeler
+from .api.views import Prediction, Labeler
 
 app = Flask(__name__)
 api = Api(app)
