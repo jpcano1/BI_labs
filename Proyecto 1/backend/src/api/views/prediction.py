@@ -17,7 +17,7 @@ class Prediction(Resource):
             y_pred = self.model.predict(series_count)
             y_pred = "Spam" if y_pred[0] == 1 else "Ham"
             return response_with(resp.SUCCESS_200, value={
-                "Prediction": f"Your message is {y_pred}"
+                "prediction": f"Your message is {y_pred}"
             })
         except Exception:
             return response_with(resp.BAD_REQUEST_400,

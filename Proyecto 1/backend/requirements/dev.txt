@@ -8,3 +8,4 @@ flask-marshmallow
 marshmallow_sqlalchemy
 python-dotenv
 flask_restful
+flask-cors

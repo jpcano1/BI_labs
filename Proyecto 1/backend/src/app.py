@@ -7,9 +7,18 @@ import os
 from .api.config import DevelopmentConfig, ProductionConfig, TestingConfig
 from flask_restful import Api
 from .api.views import Prediction, Labeler
+from flask_cors import CORS
+import logging, sys
+
+logging.basicConfig(
+    stream=sys.stdout,
+    format="%(asctime)s|%(levelname)s|%(filename)s: %(lineno)s| %(message)s",
+    level=logging.DEBUG
+)
 
 app = Flask(__name__)
 api = Api(app)
+cors = CORS(app)
 
 if os.getenv("WORK_ENV") == "PROD":
     app_config = ProductionConfig
