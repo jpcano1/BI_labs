@@ -1,0 +1,35 @@
+version: "3.7"
+
+networks:
+  bi_network:
+    driver: bridge
+
+services:
+  backend:
+    container_name: bi_backend
+    image: prod_bi_backend
+    build:
+      context: backend
+      dockerfile: compose/production/app/Dockerfile
+    env_file:
+      - backend/env/production/postgres
+    ports:
+      - 5000:5000
+    expose:
+      - 5000
+    command: /app/start
+    networks:
+      - bi_network
+
+  frontend:
+    container_name: bi_frontend
+    image: prod_bi_frontend
+    build:
+      context: frontend
+      dockerfile: compose/production/Dockerfile
+    ports:
+      - 3000:80
+    depends_on:
+      - backend
+    networks:
+      - bi_network
