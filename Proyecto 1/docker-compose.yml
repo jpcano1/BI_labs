@@ -10,7 +10,7 @@ services:
     image: prod_bi_backend
     build:
       context: backend
-      dockerfile: compose/production/app/Dockerfile
+      dockerfile: compose/production/Dockerfile
     env_file:
       - backend/env/production/postgres
     ports:
