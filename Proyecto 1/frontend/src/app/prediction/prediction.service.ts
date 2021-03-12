@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-let apiUrl = "http://localhost:5000"
+import { environment as env } from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +14,6 @@ export class PredictionService {
       "message": message
     }
 
-    return this.http.post(apiUrl + "/api/prediction", body);
+    return this.http.post(env.apiUrl + "/api/prediction", body);
   }
 }
