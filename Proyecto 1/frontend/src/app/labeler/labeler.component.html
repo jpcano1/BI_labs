@@ -1,7 +1,35 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col">
-      Hola Mundo
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8 col-10">
+      <div class="card bg-transparent text-center mt-2">
+        <div class="card-header">Labeler</div>
+        <form action="POST" class="card-body" [formGroup]="labelerForm">
+          <div class="row justify-content-center">
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" class="form-control"
+                        formControlName="message" placeholder="message"
+                        [class.is-valid]="messageValid()"
+                        [class.is-invalid]="messageValidation()"
+                        cols="80" rows="5"></textarea>
+              <div *ngIf="messageValidation()">
+                <span class="text-danger">Por favor, llenar este campo</span>
+              </div>
+            </div>
+          </div>
+          <div class="row form-check text-center justify-content-center">
+            <input type="checkbox" class="form-check-input" id="spam">
+            <label for="spam" class="form-check-label">Spam?</label>
+          </div>
+
+          <div class="mt-2 row justify-content-center">
+            <button type="submit" (click)="onSubmit()"
+                    class="btn btn-outline-success">
+              Enviar
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
