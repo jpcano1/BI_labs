@@ -7,7 +7,7 @@ ADD . $APP_DIR
 
 RUN npm install
 
-RUN run build --prod
+RUN npm run build --prod
 
 FROM nginx:1.16.0-alpine
 COPY --from=build /app/dist/frontend /usr/share/nginx/html
