@@ -13,6 +13,7 @@ services:
       dockerfile: compose/production/Dockerfile
     env_file:
       - backend/env/production/postgres
+      - backend/env/production/app
     ports:
       - 5000:5000
     expose:
